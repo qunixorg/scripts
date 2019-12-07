@@ -21,13 +21,13 @@ mkdir -v build
 cd build
 
 CC=$INSTALL_TGT-gcc \
+CXX=$INSTALL_TGT-g++ \
 AR=$INSTALL_TGT-ar \
 RANLIB=$INSTALL_TGT-ranlib \
 ../configure \
  --prefix=/tools \
  --disable-nls \
  --disable-werror \
- --enable-pic \
  --with-lib-path=/tools/lib \
  --with-sysroot || { echo "can not configure project, please check logs installation aborted" ; exit 1; }
 
