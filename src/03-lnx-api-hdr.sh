@@ -11,10 +11,11 @@ git clone https://github.com/qunixorg/linux.git || { echo "can not fetch reposit
 pushd linux
 checkUpstream
 
-sed -ie "s/EXTRAVERSION =/EXTRAVERSION = -$INSTALL_USER/g" Makefile
-yes "" | make oldconfig ||  { echo "can not copy existing kernel config, please check logs installation aborted" ; exit 1; }
-make menuconfig
-make -s INSTALL_HDR_PATH=dest headers_install || { echo "can run make headers_install, please check logs installation aborted" ; exit 1; }
+#sed -ie "s/EXTRAVERSION =/EXTRAVERSION = -$INSTALL_USER/g" Makefile
+#yes "" | make oldconfig ||  { echo "can not copy existing kernel config, please check logs installation aborted" ; exit 1; }
+#make menuconfig
+make mrproper
+make -s INSTALL_HDR_PATH=dest headers_install > install.log || { echo "can run make headers_install, please check logs installation aborted" ; exit 1; }
 
 cp -rv dest/include/* /tools/include
 popd

@@ -23,9 +23,9 @@ cd build
 
 
 make clean
-time make -s  || { echo "can not make project, please check logs installation aborted" ; exit 1; }
+time make -s > make.log || { echo "can not make project, please check logs installation aborted" ; exit 1; }
 
-time make -s install  || { echo "can not install, please check logs installation aborted" ; exit 1; }
+time make -s install > install.log || { echo "can not install, please check logs installation aborted" ; exit 1; }
 
 popd
 rm -Rf ./glibc

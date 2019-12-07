@@ -59,10 +59,11 @@ popd
 mkdir -v build
 cd build
 
+GCLIB_VERSION=$(ldd --version | grep ldd | rev | cut -f 1 -d ' ' | rev)
 ../configure \
  --target=$INSTALL_TGT \
  --prefix=/tools \
- --with-glibc-version=2.29 \
+ --with-glibc-version=$GCLIB_VERSION \
  --with-sysroot=$INSTALL_LOC \
  --with-newlib \
  --without-headers \
@@ -82,8 +83,8 @@ cd build
  --enable-languages=c,c++ || { echo "can not configure project, please check logs installation aborted" ; exit 1; }
 
 make clean
-time make -s  || { echo "can not make project, please check logs installation aborted" ; exit 1; }
+time make -s > make.log || { echo "can not make project, please check logs installation aborted" ; exit 1; }
 
-time make -s install  || { echo "can not install, please check logs installation aborted" ; exit 1; }
+time make -s install  > install.log || { echo "can not install, please check logs installation aborted" ; exit 1; }
 
 cd ../..

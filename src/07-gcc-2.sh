@@ -11,22 +11,33 @@ checkExist gcc  ||  { echo "gcc folder doesnt exist, we just used , can you look
 
 pushd gcc
 
+
+cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
+ `dirname $($INSTALL_TGT-gcc -print-libgcc-file-name)`/include-fixed/limits.h
+
 rm -Rf build
 mkdir -v build
 cd build
 
-../libstdc++-v3/configure \
- --host=$INSTALL_TGT \
+CC=$INSTALL_TGT-gcc \
+CXX=$INSTALL_TGT-g++ \
+AR=$INSTALL_TGT-ar \
+RANLIB=$INSTALL_TGT-ranlib \
+../configure \
  --prefix=/tools \
- --disable-multilib \
- --disable-nls \
- --disable-libstdcxx-threads \
+ --with-local-prefix=/tools \
+ --with-native-system-header-dir=/tools/include \
+ --enable-languages=c,c++ \
  --disable-libstdcxx-pch \
- --with-gxx-include-dir=/tools/$INSTALL_TGT/include/c++/$(x86_64-$INSTALL_USER-linux-gnu-gcc -dumpversion) || { echo "can not configure project, please check logs installation aborted" ; exit 1; }
+ --disable-multilib \
+ --disable-bootstrap \
+ --disable-libgomp
 
 make clean
-time make -s > make.log || { echo "can not make project, please check logs installation aborted" ; exit 1; }
+time make -s  || { echo "can not make project, please check logs installation aborted" ; exit 1; }
 
-time make -s install > install.log || { echo "can not install, please check logs installation aborted" ; exit 1; }
+time make -s install  || { echo "can not install, please check logs installation aborted" ; exit 1; }
+
+ln -sv gcc /tools/bin/cc
 
 popd
