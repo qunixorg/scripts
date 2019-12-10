@@ -9,7 +9,8 @@ checkUpstream () {
 		echo "An upstream defined $GIT_UPSTREAM"
 		git remote add upstream $GIT_UPSTREAM
 		git fetch upstream
-		git merge upstream/master
+		git merge --no-edit upstream/master
+		sed -i 's/:\/\/.*\//:\/\/github\.com\/qunixorg\//g' .gitmodules
 	fi
 	return 0
 }
