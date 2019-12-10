@@ -21,7 +21,7 @@ mkdir -v build
 cd build
 
 CC=$INSTALL_TGT-gcc \
-CXX=$INSTALL_TGT-g++ \
+CFLAGS="-fPIC" \
 AR=$INSTALL_TGT-ar \
 RANLIB=$INSTALL_TGT-ranlib \
 ../configure \
