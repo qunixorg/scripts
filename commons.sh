@@ -2,17 +2,21 @@
 
 checkUpstream () {
 
-	GIT_UPSTREAM=$(git show qunix-source-upstream | grep q-src | cut -d = -f2)
-	if [ -z $GIT_UPSTREAM  ]; then
-		echo "Repository doesnt have another upstream"
+	if [ "$QUNIX_VERSION" == "UPSTREAM" ]; then
+		GIT_UPSTREAM=$(git show qunix-source-upstream | grep q-src | cut -d = -f2)
+		if [ -z $GIT_UPSTREAM  ]; then
+			echo "Repository doesnt have another upstream"
+		else
+			echo "An upstream defined $GIT_UPSTREAM"
+			git remote add upstream $GIT_UPSTREAM
+			git fetch upstream
+			git merge --no-edit upstream/master
+		fi
 	else
-		echo "An upstream defined $GIT_UPSTREAM"
-		git remote add upstream $GIT_UPSTREAM
-		git fetch upstream
-		git merge --no-edit upstream/master
-		sed -i 's/:\/\/.*\//:\/\/github\.com\/qunixorg\//g' .gitmodules
+		git checkout $QUNIX_VERSION
 	fi
-	return 0
+	sed -i 's/:\/\/.*\//:\/\/github\.com\/qunixorg\//g' .gitmodules
+
 }
 
 checkExist () {

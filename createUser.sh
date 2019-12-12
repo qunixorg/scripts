@@ -7,6 +7,7 @@ checkExist /tools &&  { echo "/tools directory or link exist please remove or ba
 echo "checking user"
 
 checkVar $INSTALL_USER || { echo "Invalid user expected $INSTALL_USER or INSTALL_USER not set" ; exit 1; }
+checkVar $QUNIX_VERSION || { echo "Please set QUNIX_VERSION variable" ; exit 1; }
 checkVar $MAKEFLAGS ||  { echo "Please set MAKEFLAGS before using this script" ; exit 1; }
 checkVar $INSTALL_LOC ||  { echo "Please set INSTALL_LOC before using this script" ; exit 1; }
 export INSTALL_TGT=$(uname -m)-$INSTALL_USER-linux-gnu
@@ -25,6 +26,7 @@ umask 022
 INSTALL_LOC=$INSTALL_LOC
 INSTALL_USER=$INSTALL_USER
 MAKEFLAGS="$MAKEFLAGS"
+QUNIX_VERSION="$QUNIX_VERSION"
 LC_ALL=POSIX
 INSTALL_TGT=$INSTALL_TGT
 PATH=/tools/bin:/bin:/usr/bin
