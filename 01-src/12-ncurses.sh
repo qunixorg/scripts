@@ -2,6 +2,7 @@
 
 
 source $(pwd)/../commons.sh
+checkVar $QUNIX_VERSION || { echo "Please set QUNIX_VERSION" ; exit 1 ; }
 
 echo "checking user"
 

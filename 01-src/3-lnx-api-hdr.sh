@@ -1,5 +1,6 @@
 #!/bin/bash
 source ../commons.sh
+checkVar $QUNIX_VERSION || { echo "Please set QUNIX_VERSION" ; exit 1 ; }
 
 checkme "$INSTALL_USER" || { echo "Invalid user expected $INSTALL_USER or INSTALL_USER not set" ; exit 1; }
 checkVar $MAKEFLAGS ||  { echo "Please set MAKEFLAGS before using this script" ; exit 1; }
