@@ -20,8 +20,5 @@ checkUpstream
 
 ./configure --prefix=/tools || { echo "can not make project, please check logs installation aborted" ; exit 1; }
 
-
-make clean
-time make -s > make.log || { echo "can not make project, please check logs installation aborted" ; exit 1; }
 time make -s install > install.log || { echo "can not install, please check logs installation aborted" ; exit 1; }
 popd

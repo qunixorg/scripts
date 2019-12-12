@@ -17,6 +17,7 @@ cd tcl
 
 checkUpstream
 
+git checkout core-8-6-9
 
 cd unix
 ./configure --prefix=/tools
