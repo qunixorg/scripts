@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-source $(pwd)/../../commons.sh
+source $(pwd)/../commons.sh
 
 echo "checking user"
 
