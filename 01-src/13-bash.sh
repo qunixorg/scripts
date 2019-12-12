@@ -16,7 +16,7 @@ git clone https://github.com/qunixorg/bash.git || { echo "can not fetch reposito
 
 pushd bash 
 
-git checkout qunix-v0.0.1
+checkUpstream
 
 ./configure --prefix=/tools --without-bash-malloc
 

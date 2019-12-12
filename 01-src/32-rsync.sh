@@ -17,7 +17,7 @@ git clone https://github.com/qunixorg/rsync.git || { echo "can not fetch reposit
 
 pushd rsync
 
-git checkout qunix-v0.0.1
+checkUpstream
 
 ./configure --prefix=/tools || { echo "can not configure project, please check logs installation aborted" ; exit 1; }
 

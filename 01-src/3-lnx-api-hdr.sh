@@ -10,7 +10,7 @@ checkVar $INSTALL_TGT ||  { echo "Please set INSTALL_TGT before using this scrip
 git clone https://github.com/qunixorg/linux.git || { echo "can not fetch repository, please check logs installation aborted" ; exit 1; }
 
 pushd linux
-git checkout qunix-v0.0.1
+checkUpstream
 
 #sed -ie "s/EXTRAVERSION =/EXTRAVERSION = -$INSTALL_USER/g" Makefile
 #yes "" | make oldconfig ||  { echo "can not copy existing kernel config, please check logs installation aborted" ; exit 1; }

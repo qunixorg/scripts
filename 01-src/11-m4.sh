@@ -18,7 +18,7 @@ git clone https://github.com/qunixorg/gnulib.git || { echo "can not fetch reposi
 
 pushd gnulib
 
-git checkout qunix-v0.0.1
+checkUpstream
 
 export GNULIB_SRCDIR=$(pwd)
 
@@ -31,7 +31,7 @@ git clone https://github.com/qunixorg/m4.git || { echo "can not fetch repository
 
 cd m4
 
-git checkout qunix-v0.0.1
+checkUpstream
 
 sed -i 's/AC_PREREQ/#AC_PREREQ/g' configure.ac
 

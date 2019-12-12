@@ -16,7 +16,7 @@ git clone https://github.com/qunixorg/bzip2.git || { echo "can not fetch reposit
 
 pushd bzip2
 
-git checkout qunix-v0.0.1
+checkUpstream
 
 make clean
 time make -s > make.log || { echo "can not make project, please check logs installation aborted" ; exit 1; }

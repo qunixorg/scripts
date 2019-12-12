@@ -18,7 +18,7 @@ git clone https://github.com/qunixorg/xz.git || { echo "can not fetch repository
 
 pushd xz
 
-git checkout qunix-v0.0.1
+checkUpstream
 
 ./autogen.sh || { echo "can not run bootstrap, please check logs installation aborted" ; exit 1; }
 

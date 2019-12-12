@@ -18,7 +18,7 @@ git clone https://github.com/qunixorg/gawk.git || { echo "can not fetch reposito
 
 pushd gawk 
 
-git checkout qunix-v0.0.1
+checkUpstream
 
 ./configure --prefix=/tools || { echo "can not configure project, please check logs installation aborted" ; exit 1; }
 

@@ -17,7 +17,7 @@ git clone https://github.com/qunixorg/gettext.git || { echo "can not fetch repos
 
 pushd gettext 
 
-git checkout qunix-v0.0.1
+checkUpstream
 
 ./autogen.sh || { echo "can not bootstrap project, please check logs installation aborted" ; exit 1; }
 

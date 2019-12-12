@@ -18,7 +18,7 @@ git clone https://github.com/qunixorg/bison.git || { echo "can not fetch reposit
 
 pushd bison 
 
-git checkout qunix-v0.0.1
+checkUpstream
 
 git submodule update --init
 

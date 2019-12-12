@@ -18,7 +18,7 @@ git clone https://github.com/qunixorg/textinfo.git || { echo "can not fetch repo
 
 pushd textinfo
 
-git checkout qunix-v0.0.1
+checkUpstream
 
 ./autogen.sh || { echo "can not run bootstrap, please check logs installation aborted" ; exit 1; }
 

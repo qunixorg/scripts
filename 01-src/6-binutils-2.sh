@@ -15,7 +15,7 @@ checkExist binutils  ||  { echo "binutils folder doesnt exist, we just used , ca
 
 pushd binutils
 
-git checkout qunix-v0.0.1
+checkUpstream
 
 rm -Rf build
 mkdir -v build

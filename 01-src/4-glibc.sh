@@ -10,7 +10,7 @@ checkVar $INSTALL_TGT ||  { echo "Please set INSTALL_TGT before using this scrip
 git clone https://github.com/qunixorg/glibc.git || { echo "can not fetch repository, please check logs installation aborted" ; exit 1; }
 
 pushd glibc
-git checkout qunix-v0.0.1
+checkUpstream
 
 mkdir -v build
 cd build
