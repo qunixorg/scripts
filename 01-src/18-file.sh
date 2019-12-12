@@ -16,8 +16,8 @@ git clone https://github.com/qunixorg/file.git || { echo "can not fetch reposito
 
 pushd file 
 
-checkUpstream
-git checkout FILE5_37
+git checkout qunix-v0.0.1
+
 autoreconf -f -i
 autoconf
 

@@ -15,9 +15,7 @@ git clone https://github.com/qunixorg/tcl.git || { echo "can not fetch repositor
 
 cd tcl 
 
-checkUpstream
-
-git checkout core-8-6-9
+git checkout qunix-v0.0.1
 
 cd unix
 ./configure --prefix=/tools

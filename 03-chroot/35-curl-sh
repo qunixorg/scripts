@@ -16,7 +16,7 @@ git clone https://github.com/qunixorg/curl.git || { echo "can not fetch reposito
 
 pushd curl
 
-checkUpstream
+git checkout qunix-v0.0.1
 
 ./buildconf || { echo "can not configure project, please check logs installation aborted" ; exit 1; }
 

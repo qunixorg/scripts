@@ -16,7 +16,7 @@ git clone https://github.com/qunixorg/git.git || { echo "can not fetch repositor
 
 pushd git
 
-checkUpstream
+git checkout qunix-v0.0.1
 
 make configure || { echo "can not configure project, please check logs installation aborted" ; exit 1; } 
 

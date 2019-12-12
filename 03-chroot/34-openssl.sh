@@ -16,7 +16,7 @@ git clone https://github.com/qunixorg/openssl.git || { echo "can not fetch repos
 
 pushd openssl
 
-checkUpstream
+git checkout qunix-v0.0.1
 
 ./config --prefix=/tools --openssldir=/tools || { echo "can not configure project, please check logs installation aborted" ; exit 1; }
 

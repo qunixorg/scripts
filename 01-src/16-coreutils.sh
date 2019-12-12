@@ -17,9 +17,7 @@ git clone https://github.com/qunixorg/coreutils.git || { echo "can not fetch rep
 
 pushd coreutils 
 
-checkUpstream
-
-git checkout v8.31
+git checkout qunix-v0.0.1
 
 ./bootstrap || { echo "can not run bootstrap, please check logs installation aborted" ; exit 1; }
 

@@ -15,7 +15,7 @@ git clone https://github.com/qunixorg/expect.git || { echo "can not fetch reposi
 
 pushd expect
 
-checkUpstream
+git checkout qunix-v0.0.1
 
 cp -v configure{,.orig}
 sed 's:/usr/local/bin:/bin:' configure.orig > configure

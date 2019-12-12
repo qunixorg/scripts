@@ -17,9 +17,7 @@ git clone https://github.com/qunixorg/perl5.git || { echo "can not fetch reposit
 
 pushd perl5
 
-checkUpstream
-
-git checkout v5.30.1
+git checkout qunix-v0.0.1
 
 sh Configure -des -Dprefix=/tools -Dlibs=-lm -Uloclibpth -Ulocincpth || { echo "can not configure, please check logs installation aborted" ; exit 1; }
 

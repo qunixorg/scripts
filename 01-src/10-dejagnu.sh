@@ -15,7 +15,7 @@ git clone https://github.com/qunixorg/dejagnu.git || { echo "can not fetch repos
 
 pushd dejagnu
 
-checkUpstream
+git checkout qunix-v0.0.1
 
 
 ./configure --prefix=/tools || { echo "can not make project, please check logs installation aborted" ; exit 1; }

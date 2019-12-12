@@ -15,7 +15,7 @@ git clone https://github.com/qunixorg/ncurses.git || { echo "can not fetch repos
 
 pushd ncurses 
 
-checkUpstream
+git checkout qunix-v0.0.1
 
 sed -i s/mawk// configure
 

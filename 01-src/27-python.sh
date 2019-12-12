@@ -17,7 +17,7 @@ git clone https://github.com/qunixorg/cpython.git || { echo "can not fetch repos
 
 pushd cpython
 
-checkUpstream
+git checkout qunix-v0.0.1
 
 sed -i '/def add_multiarch_paths/a \ \ \ \ \ \ \ \ return' setup.py
 

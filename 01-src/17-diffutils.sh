@@ -16,7 +16,7 @@ git clone https://github.com/qunixorg/diffutils.git || { echo "can not fetch rep
 
 pushd diffutils 
 
-checkUpstream
+git checkout qunix-v0.0.1
 
 ./bootstrap || { echo "can not run bootstrap, please check logs installation aborted" ; exit 1; }
 

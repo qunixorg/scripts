@@ -10,7 +10,7 @@ checkVar $INSTALL_TGT ||  { echo "Please set INSTALL_TGT before using this scrip
 git clone https://github.com/qunixorg/gcc.git || { echo "can not fetch repository, please check logs installation aborted" ; exit 1; }
 
 cd gcc
-checkUpstream
+git checkout qunix-v0.0.1
 
 for file in gcc/config/{linux,i386/linux{,64}}.h
 do
@@ -36,21 +36,21 @@ esac
 git clone https://github.com/qunixorg/gmp.git || { echo "can not fetch repository, please check logs installation aborted" ; exit 1; }
 
 pushd gmp
-checkUpstream
+git checkout qunix-v0.0.1
 popd
 
 
 git clone https://github.com/qunixorg/mpc.git || { echo "can not fetch repository, please check logs installation aborted" ; exit 1; }
 
 pushd mpc 
-checkUpstream
+git checkout qunix-v0.0.1
 popd
 
 
 git clone https://github.com/qunixorg/mpfr.git || { echo "can not fetch repository, please check logs installation aborted" ; exit 1; }
 
 pushd mpfr
-checkUpstream
+git checkout qunix-v0.0.1
 popd
 
 

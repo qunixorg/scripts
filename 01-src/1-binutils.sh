@@ -15,7 +15,7 @@ git clone https://github.com/qunixorg/binutils.git || { echo "can not fetch repo
 
 cd binutils
 
-checkUpstream
+git checkout qunix-v0.0.1
 
 mkdir -v build
 cd build

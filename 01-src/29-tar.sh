@@ -17,7 +17,7 @@ git clone https://github.com/qunixorg/tar.git || { echo "can not fetch repositor
 
 pushd tar
 
-checkUpstream
+git checkout qunix-v0.0.1
 
 ./bootstrap || { echo "can not run bootstrap, please check logs installation aborted" ; exit 1; }
 
