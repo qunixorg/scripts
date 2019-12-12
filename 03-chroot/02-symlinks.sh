@@ -1,7 +1,7 @@
 #!/tools/bin/bash
 
 
-source $(pwd)/commons.sh
+source $(pwd)/../commons.sh
 
 whoami && { echo "You should see I have no name but whoami return success! Please check which user you are!" ; exit 1; }
 ln -sv /tools/bin/{bash,cat,chmod,dd,echo,ln,mkdir,pwd,rm,stty,touch} /bin

@@ -1,7 +1,7 @@
 #!/tools/bin/bash
 
 
-source $(pwd)/commons.sh
+source $(pwd)/../commons.sh
 
 whoami && { echo "You should see I have no name but whoami return success! Please check which user you are!" ; exit 1; }
 mkdir -pv /{bin,boot,etc/{opt,sysconfig},home,lib/firmware,mnt,opt}

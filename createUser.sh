@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source $(pwd)/src/commons.sh
+source $(pwd)/commons.sh
 
 checkExist /tools &&  { echo "/tools directory or link exist please remove or backup before running" ; exit 1; }
 

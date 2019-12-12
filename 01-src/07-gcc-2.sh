@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source commons.sh
+source ../commons.sh
 
 checkme "$INSTALL_USER" || { echo "Invalid user expected $INSTALL_USER or INSTALL_USER not set" ; exit 1; }
 checkVar $MAKEFLAGS ||  { echo "Please set MAKEFLAGS before using this script" ; exit 1; }
