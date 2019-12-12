@@ -31,8 +31,10 @@ PATH=/tools/bin:/bin:/usr/bin
 export INSTALL_LOC LC_ALL INSTALL_TGT INSTALL_USER MAKEFLAGS PATH
 EOF
 echo "bashrc created for new user"
+cp -Rav ../scripts /tmp/skel/
 useradd -s /bin/bash -g $INSTALL_USER -m -d $INSTALL_LOC/sources -k /dev/null -k /tmp/skel $INSTALL_USER
 chown -vR $INSTALL_USER:$INSTALL_USER $INSTALL_LOC/tools
 chown -vR $INSTALL_USER:$INSTALL_USER $INSTALL_LOC/sources
 ln -sv $INSTALL_LOC/tools /tools
+
 exit 0
