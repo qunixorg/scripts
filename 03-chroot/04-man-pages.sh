@@ -4,9 +4,10 @@
 source $(pwd)/../commons.sh
 
 checkme "root" || { echo "Invalid user expected : root" ; exit 1; }
+checkVar "$MAKEFLAGS" || { echo "MAKEFLAGS not set" ; exit 1 ; }
 
-pushd man-pages
+pushd ../01-src/man-pages
 
-make install
+time make -s install > make.log || { echo "Can not install please check logs" ; exit 1; }
 
 popd

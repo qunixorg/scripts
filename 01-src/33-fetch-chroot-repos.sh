@@ -99,6 +99,13 @@ pushd iana-etc
 checkUpstream
 popd
 
+
+echo "cloning iana-tz"
+git clone https://github.com/qunixorg/iana-timezones.git || { echo "can not fetch repository, please check logs installation aborted" ; exit 1; }
+pushd iana-timezones
+checkUpstream
+popd
+
 echo "cloning flex"
 git clone https://github.com/qunixorg/flex.git || { echo "can not fetch repository, please check logs installation aborted" ; exit 1; }
 pushd flex

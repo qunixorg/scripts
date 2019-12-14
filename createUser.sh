@@ -16,6 +16,10 @@ groupadd $INSTALL_USER
 
 mkdir -p $INSTALL_LOC/tools
 mkdir -p /tmp/skel 
+
+HOST_TZ=$(timedatectl show | grep Timezone | cut -d = -f 2)
+echo $HOST_TZ > $INSTALL_LOC/.timezone
+
 cat > /tmp/skel/.bash_profile << "EOF"
 exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash
 EOF
@@ -30,7 +34,8 @@ QUNIX_VERSION="$QUNIX_VERSION"
 LC_ALL=POSIX
 INSTALL_TGT=$INSTALL_TGT
 PATH=/tools/bin:/bin:/usr/bin
-export INSTALL_LOC LC_ALL INSTALL_TGT INSTALL_USER MAKEFLAGS QUNIX_VERSION PATH
+TZ=$HOST_TZ
+export INSTALL_LOC LC_ALL INSTALL_TGT INSTALL_USER MAKEFLAGS QUNIX_VERSION TZ PATH
 EOF
 echo "bashrc created for new user"
 cp -Rav ../scripts /tmp/skel/
